@@ -1,7 +1,7 @@
 {
   "name": "projeto",
   "version": "1.0.0",
-  "description": "Sistema de Cadastro de Hoteis",
+  "description": "Sistema de Cadastro de Veiculos",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -11,6 +11,6 @@
     "restify": "^8.5.1",
     "pg": "^8.11.5"
   },
-  "author": "[Igor Rodrigues - Thiago Miguel] [1523 - 1637]",
+  "author": "[Thiago Miguel] [1637]",
   "license": "ISC"
 }

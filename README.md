@@ -1,7 +1,7 @@
 
-# Sistema de Cadastro de Hotéis
+# Sistema de Cadastro de Veículos
 
-Este projeto é um sistema de cadastro de hotéis que permite a inserção, atualização, listagem e exclusão de informações de hotéis. Ele é dividido em três principais componentes: um frontend, um backend e um banco de dados PostgreSQL.
+Este projeto é um sistema de cadastro de veículos que permite a inserção, atualização, listagem e exclusão de informações de veículos. Ele é dividido em três principais componentes: um frontend, um backend e um banco de dados PostgreSQL.
 
 ## Tecnologias Utilizadas
 
@@ -13,9 +13,9 @@ Este projeto é um sistema de cadastro de hotéis que permite a inserção, atua
 
 O projeto está dividido em três contêineres Docker:
 
-- `hotelFrontend`: Contêiner para o frontend da aplicação.
-- `hotelBackend`: Contêiner para o backend, que gerencia as requisições da API.
-- `hotelDatabase`: Contêiner para o PostgreSQL, armazenando todos os dados dos hotéis.
+- `vehicleFrontend`: Contêiner para o frontend da aplicação.
+- `vehicleBackend`: Contêiner para o backend, que gerencia as requisições da API.
+- `vehicleDatabase`: Contêiner para o PostgreSQL, armazenando todos os dados dos veiculos.
 
 ## Instalação
 
@@ -40,19 +40,19 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento:
 
 Acesse o frontend da aplicação em `http://localhost:3000`. As funcionalidades incluem:
 
-- **Adicionar um novo hotel**: Acessível através do formulário de inserção no frontend.
-- **Listar todos os hotéis**: Visualize todos os hotéis cadastrados.
-- **Atualizar informações de um hotel**: Através da página de detalhes de cada hotel.
-- **Excluir um hotel**: Pode ser feito na lista de hotéis ou na página de detalhes.
+- **Adicionar um novo veiculo**: Acessível através do formulário de inserção no frontend.
+- **Listar todos os veiculos**: Visualize todos os veiculos cadastrados.
+- **Atualizar informações de um veiculo**: Através da página de detalhes de cada veiculo.
+- **Excluir um veiculo**: Pode ser feito na lista de veiculos ou na página de detalhes.
 
 ## API Endpoints
 
 O backend oferece vários endpoints para interação com o banco de dados:
 
-- `POST /api/v1/hotel/inserir`: Adiciona um novo hotel
-- `GET /api/v1/hotel/listar`: Lista todos os hotéis
-- `POST /api/v1/hotel/atualizar`: Atualiza um hotel existente
-- `POST /api/v1/hotel/excluir`: Exclui um hotel
+- `POST /api/v1/veiculo/inserir`: Adiciona um novo veiculo
+- `GET /api/v1/veiculo/listar`: Lista todos os veiculos
+- `POST /api/v1/veiculo/atualizar`: Atualiza um veiculo existente
+- `POST /api/v1/veiculo/excluir`: Exclui um veiculo
 
 ## Contribuição
 

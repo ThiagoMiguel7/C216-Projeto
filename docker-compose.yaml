@@ -2,20 +2,20 @@ version: '3'
 services:
 
   db:
-    container_name: hotelDatabase
+    container_name: vehicleDatabase
     image: postgres:latest
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: hoteis
+      POSTGRES_DB: veiculos
     ports:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
 
   backend:
-    container_name: hotelBackend
+    container_name: vehicleBackend
     build:
       context: ./backend
       dockerfile: Dockerfile-backend
@@ -28,12 +28,12 @@ services:
       NODE_ENV: development
       POSTGRES_USER: postgres
       POSTGRES_HOST: db
-      POSTGRES_DB: hoteis
+      POSTGRES_DB: veiculos
       POSTGRES_PASSWORD: password
       POSTGRES_PORT: 5432
 
   frontend:
-    container_name: hotelFrontend
+    container_name: vehicleFrontend
     build:
       context: ./frontend
       dockerfile: Dockerfile-frontend
@@ -43,7 +43,7 @@ services:
     depends_on:
       - backend
     environment:
-      API_BASE_URL: http://backend:5000/api/v1/hotel
+      API_BASE_URL: http://backend:5000/api/v1/veiculo
       API_DATABASE_RESET: http://backend:5000/api/v1/database/reset
 
 volumes:
