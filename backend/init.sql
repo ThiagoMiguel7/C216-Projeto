@@ -1,0 +1,8 @@
+CREATE TABLE veiculos (
+  id SERIAL PRIMARY KEY,
+  modelo VARCHAR(255) NOT NULL,
+  ano INT NOT NULL,
+  cor VARCHAR(255) NOT NULL,
+  placa VARCHAR(7) NOT NULL,
+  km INT NOT NULL
+);

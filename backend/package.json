@@ -1,7 +1,7 @@
 {
   "name": "projeto",
   "version": "1.0.0",
-  "description": "Sistema de Cadastro de Veiculos",
+  "description": "API server with Restify and PostgreSQL",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",

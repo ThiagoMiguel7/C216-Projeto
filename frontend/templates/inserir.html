@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Veículo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .navbar-brand, .nav-link {
+            color: #d4af37;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ffffff;
+        }
+        .container-fluid {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 0.5rem;
+        }
+        input[type="text"], input[type="number"], input[type="submit"] {
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background-color: #d4af37;
+            border-color: #d4af37;
+            color: #000;
+        }
+        input[type="submit"]:hover {
+            background-color: #b99730;
+            border-color: #b99730;
+        }
+        .form-control {
+            border: 1px solid #d4af37;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #000;
+        }
+        .bg-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .bg-slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .bg-slideshow img.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-slideshow">
+        <img src="{{ url_for('assets', filename='6.jpg') }}" alt="Background 1" class="active">
+        <img src="{{ url_for('assets', filename='2.jpg') }}" alt="Background 2">
+        <img src="{{ url_for('assets', filename='3.jpg') }}" alt="Background 3">
+        <img src="{{ url_for('assets', filename='4.jpg') }}" alt="Background 4">
+        <img src="{{ url_for('assets', filename='5.jpg') }}" alt="Background 5">
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('assets', filename='porsche-logo.png') }}" alt="Porsche Logo" width="30" height="30" class="d-inline-block align-top">
+                Inserir Veículos
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/listar">Listar Veículos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <form action="/inserir" method="POST">
+            <label for="modelo" class="form-label">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Digite o modelo do veículo">
+            <label for="ano" class="form-label">Ano:</label>
+            <input type="number" id="ano" name="ano" class="form-control" placeholder="Digite o ano do veículo">
+            <label for="placa" class="form-label">Placa:</label>
+            <input type="text" id="placa" name="placa" class="form-control" maxlength="7" placeholder="Digite a placa do veículo">
+            <label for="cor" class="form-label">Cor:</label>
+            <input type="text" id="cor" name="cor" class="form-control" placeholder="Digite a cor do veículo">
+            <label for="km" class="form-label">Quilometragem:</label>
+            <input type="number" id="km" name="km" class="form-control" placeholder="Digite a quilometragem do veículo">
+            <input type="submit" value="Inserir" class="btn btn-primary">
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.bg-slideshow img');
+        const totalImages = images.length;
+
+        setInterval(() => {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % totalImages;
+            images[currentImageIndex].classList.add('active');
+        }, 3000);
+    </script>
+</body>
+</html>
