@@ -62,10 +62,12 @@ Acesse o frontend da aplicação em `http://localhost:3000`. A aplicação ofere
 ```
 C216-Projeto/
 ├── backend/
+│   ├── src/
+│   │   └── index.js
+│   ├── Dockerfile-backend
 │   ├── init.sql
-│   ├── package.json
-│   └── src/
-│       └── index.js
+│   ├── package-lock.json
+│   └── package.json
 ├── frontend/
 │   ├── assets/
 │   │   ├── 1.jpg
@@ -76,10 +78,15 @@ C216-Projeto/
 │   │   ├── index.html
 │   │   ├── inserir.html
 │   │   └── listar.html
+│   ├── video/
+│   │   └── 911.mp4 (O vídeo 911.mp4 não está no repositório, pois o GitHub não suporta arquivos de vídeo grandes. Por favor, adicione o vídeo manualmente após clonar o repositório.)
 │   ├── app.py
-│   └── video/
-│       └── 911.mp4 (O vídeo 911.mp4 não está no repositório, pois o GitHub não suporta arquivos de vídeo grandes. Por favor, adicione o vídeo manualmente após clonar o repositório.)
-├── docker-compose.yml
+│   ├── Dockerfile-frontend
+│   └── requirements.txt
+├── .gitattributes
+├── .gitignore
+├── docker-compose.yaml
+├── LICENSE
 └── README.md
 ```
 
